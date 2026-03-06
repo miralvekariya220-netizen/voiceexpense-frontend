@@ -21,11 +21,7 @@ const ExpenseList = ({ refreshTrigger, onExpenseChange,activeFilters }) => {
   });
 
   const categories = ['groceries', 'transport', 'health', 'food', 'utilities', 'entertainment', 'shopping', 'rent', 'other'];
-
-  useEffect(() => {
-    loadExpenses();
-  }, [loadExpenses,refreshTrigger]);
-
+  
   const loadExpenses = useCallback(async () => {
     try {
       // ✅ Magic Logic:
@@ -37,6 +33,12 @@ const ExpenseList = ({ refreshTrigger, onExpenseChange,activeFilters }) => {
       console.error(e);
     }
   },[activeFilters]);
+  
+  useEffect(() => {
+    loadExpenses();
+  }, [loadExpenses,refreshTrigger]);
+
+  
   const handleDelete = async (id) => {
     if(window.confirm("Are you sure you want to delete this expense?")) {
       await expenseAPI.delete(id);
