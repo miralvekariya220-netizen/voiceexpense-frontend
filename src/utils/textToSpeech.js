@@ -75,4 +75,4 @@ class TextToSpeech {
   }
 }
 const textToSpeech = new TextToSpeech();
-export default textToSpeech();
+export default textToSpeech;
