@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Backend ka URL
 // const API_BASE_URL = 'http://192.168.1.179:8000/api';
-const API_BASE_URL = 'https://voiceexpense-backend-1.onrender.com'
+const API_BASE_URL = 'https://voiceexpense-backend-1.onrender.com/api'
 
 const api = axios.create({
   baseURL: API_BASE_URL,
