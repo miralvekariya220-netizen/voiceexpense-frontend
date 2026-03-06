@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState ,useCallback} from 'react';
 import { 
   Card, CardContent, Typography, List, ListItem, ListItemText, 
   IconButton, Chip, Dialog, DialogTitle, DialogContent, 
@@ -24,9 +24,9 @@ const ExpenseList = ({ refreshTrigger, onExpenseChange,activeFilters }) => {
 
   useEffect(() => {
     loadExpenses();
-  }, [refreshTrigger]);
+  }, [loadExpenses,refreshTrigger]);
 
-  const loadExpenses = async () => {
+  const loadExpenses = useCallback(async () => {
     try {
       // ✅ Magic Logic:
       // Agar filters hain to 'getAll(activeFilters)' call karo (Filter API)
@@ -36,7 +36,7 @@ const ExpenseList = ({ refreshTrigger, onExpenseChange,activeFilters }) => {
     } catch (e) {
       console.error(e);
     }
-  };
+  },[activeFilters]);
   const handleDelete = async (id) => {
     if(window.confirm("Are you sure you want to delete this expense?")) {
       await expenseAPI.delete(id);
