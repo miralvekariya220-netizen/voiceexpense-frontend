@@ -34,6 +34,7 @@ const ExpenseList = ({ refreshTrigger, onExpenseChange,activeFilters }) => {
     }
   },[activeFilters]);
   
+  
   useEffect(() => {
     loadExpenses();
   }, [loadExpenses,refreshTrigger]);
