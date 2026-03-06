@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Card, CardContent, Grid, TextField, MenuItem, Button, Typography, IconButton, Box } from '@mui/material';
-import { Search, RestartAlt } from '@mui/icons-material';
+import { Card, CardContent, Grid, TextField, MenuItem, Button, Typography } from '@mui/material';
+import { Search } from '@mui/icons-material';
 
 const ExpenseFilter = ({ onFilterApply }) => {
   const [filters, setFilters] = useState({

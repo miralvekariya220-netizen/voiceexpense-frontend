@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { 
   Card, CardContent, Typography, LinearProgress, Box, 
   Button, Dialog, DialogTitle, DialogContent, 
-  TextField, MenuItem, DialogActions, IconButton 
+  TextField, MenuItem, DialogActions
 } from '@mui/material';
-import { Add, Delete } from '@mui/icons-material';
+import { Add } from '@mui/icons-material';
 import { budgetAPI } from '../services/api';
 
 const BudgetTracker = () => {

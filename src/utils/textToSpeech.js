@@ -74,5 +74,5 @@ class TextToSpeech {
     this.synth.speak(utterance);
   }
 }
-
-export default new TextToSpeech();
+const textToSpeech = new TextToSpeech();
+export default textToSpeech();
